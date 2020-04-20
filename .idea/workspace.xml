@@ -2,96 +2,98 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ea78287-d821-4418-8dc9-53edb0488892" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/_posts/2020-04-20-ABI-DTI.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/abi_dti/ABI_anatomy.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/abi_dti/Schwannoma.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/about/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/about/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/archive-layout-with-content/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/archive-layout-with-content/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/categories/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/categories/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/collection-archive/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/collection-archive/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/cv/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/cv/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/feed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/_site/feed.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/images/3953273590_704e3899d5_m.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/images/500x300.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/images/bio-photo-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/images/bio-photo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/images/editing-talk.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/images/foo-bar-identity-th.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/images/foo-bar-identity.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/images/image-alignment-1200x4002.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/images/image-alignment-150x150.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/images/image-alignment-300x200.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/images/image-alignment-580x300.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/images/mstile-144x144.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/images/mstile-150x150.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/images/mstile-310x150.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/images/mstile-310x310.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/images/mstile-70x70.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/images/paragraph-indent.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/images/paragraph-no-indent.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/images/profile.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/images/safari-pinned-tab.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/images/site-logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/markdown.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/markdown.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/markdown/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/markdown/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/markdown_generator/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/markdown_generator/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/md/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/md/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/nmp.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/nmp.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/nmp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/nmp/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/non-menu-page/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/non-menu-page/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/page-archive/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/page-archive/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/portfolio/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/portfolio/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/portfolio/portfolio-1/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/portfolio/portfolio-1/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/portfolio/portfolio-2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/portfolio/portfolio-2/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/posts-archive/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/posts-archive/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/posts/1note1day/post-1/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/posts/1note1day/post-1/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/publication/01.02.19-paper-3D-CN-ABI" beforeDir="false" afterPath="$PROJECT_DIR$/_site/publication/01.02.19-paper-3D-CN-ABI" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/publication/01.06.18-paper-metacognition-conversion" beforeDir="false" afterPath="$PROJECT_DIR$/_site/publication/01.06.18-paper-metacognition-conversion" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/publications/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/publications/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/redirects.json" beforeDir="false" afterPath="$PROJECT_DIR$/_site/redirects.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/resume.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/resume.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/_site/robots.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/_site/sitemap.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/sitemap/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/sitemap/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/tags/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/tags/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/talkmap.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/talkmap.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/talks/2012-03-01-talk-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/talks/2012-03-01-talk-1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/talks/2013-03-01-tutorial-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/talks/2013-03-01-tutorial-1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/talks/2014-02-01-talk-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/talks/2014-02-01-talk-2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/talks/2014-03-01-talk-3.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/talks/2014-03-01-talk-3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/talks/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/talks/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/teaching/2014-spring-teaching-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/teaching/2014-spring-teaching-1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/teaching/2015-spring-teaching-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/teaching/2015-spring-teaching-1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/teaching/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/teaching/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/terms/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/terms/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/wordpress/blog-posts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/wordpress/blog-posts/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/year-archive/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/year-archive/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/3953273590_704e3899d5_m.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/500x300.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/bio-photo-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/bio-photo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/editing-talk.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/foo-bar-identity-th.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/foo-bar-identity.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/image-alignment-1200x4002.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/image-alignment-150x150.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/image-alignment-300x200.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/image-alignment-580x300.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/mstile-144x144.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/mstile-150x150.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/mstile-310x150.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/mstile-310x310.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/mstile-70x70.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/paragraph-indent.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/paragraph-no-indent.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/profile.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/safari-pinned-tab.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/site-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/404.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/CONTRIBUTING.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/about.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/about/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/archive-layout-with-content/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/assets/css/academicons.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/assets/css/academicons.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/assets/css/collapse.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/assets/css/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/assets/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/assets/fonts/academicons.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/assets/fonts/academicons.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/assets/fonts/academicons.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/assets/fonts/academicons.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/assets/fonts/fa-brands-400.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/assets/fonts/fa-brands-400.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/assets/fonts/fa-brands-400.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/assets/fonts/fa-brands-400.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/assets/fonts/fa-brands-400.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/assets/fonts/fa-regular-400.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/assets/fonts/fa-regular-400.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/assets/fonts/fa-regular-400.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/assets/fonts/fa-regular-400.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/assets/fonts/fa-regular-400.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/assets/fonts/fa-solid-900.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/assets/fonts/fa-solid-900.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/assets/fonts/fa-solid-900.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/assets/fonts/fa-solid-900.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/assets/fonts/fa-solid-900.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/assets/js/collapse.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/assets/js/main.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/categories/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/collection-archive/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/cv/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/feed.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/files/cv_julian_klug.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/images/browserconfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/images/id4BW.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/images/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/markdown.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/markdown/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/markdown_generator/PubsFromBib.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/markdown_generator/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/markdown_generator/publications.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/markdown_generator/publications.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/markdown_generator/publications.tsv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/markdown_generator/pubsFromBib.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/markdown_generator/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/markdown_generator/talks.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/markdown_generator/talks.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/markdown_generator/talks.tsv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/md/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/nmp.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/nmp/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/non-menu-page/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/page-archive/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/portfolio/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/portfolio/portfolio-1/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/portfolio/portfolio-2/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/posts-archive/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/posts/1note1day/post-1/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/publication/01.02.19-paper-3D-CN-ABI" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/publication/01.06.18-paper-metacognition-conversion" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/publications/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/redirects.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/resume.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/sitemap.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/sitemap/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/tags/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/talkmap.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/talkmap.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/talkmap.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/talkmap/leaflet_dist/MarkerCluster.Default.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/talkmap/leaflet_dist/MarkerCluster.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/talkmap/leaflet_dist/leaflet.markercluster-src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/talkmap/leaflet_dist/leaflet.markercluster.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/talkmap/leaflet_dist/screen.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/talkmap/map.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/talkmap/org-locations.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/talks/2012-03-01-talk-1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/talks/2013-03-01-tutorial-1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/talks/2014-02-01-talk-2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/talks/2014-03-01-talk-3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/talks/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/teaching/2014-spring-teaching-1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/teaching/2015-spring-teaching-1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/teaching/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/terms/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/wordpress/blog-posts/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/year-archive/index.html" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -106,7 +108,7 @@
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="150">
-                <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+                <caret line="10" selection-start-line="10" selection-end-line="10" />
               </first_editor>
               <second_editor />
             </state>
@@ -265,7 +267,7 @@
       <workItem from="1586446524015" duration="1038000" />
       <workItem from="1586808462627" duration="52000" />
       <workItem from="1587375986753" duration="4621000" />
-      <workItem from="1587381711356" duration="2166000" />
+      <workItem from="1587381711356" duration="2405000" />
     </task>
     <task id="LOCAL-00001" summary="First 1 note a day post&#10;- FAST HUG in ICU">
       <created>1585587369324</created>
@@ -278,7 +280,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23105000" />
+    <option name="totallyTimeSpent" value="23344000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -517,7 +519,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="150">
-            <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            <caret line="10" selection-start-line="10" selection-end-line="10" />
           </first_editor>
           <second_editor />
         </state>
