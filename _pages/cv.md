@@ -9,4 +9,4 @@ redirect_from:
 
 {% include base_path %}
 
-You may find my current CV [here](http://monsieurwave.github.io/julian.klug/files/cv_julian_klug.pdf).
+You may find my current CV [here](/files/cv_julian_klug.pdf).
