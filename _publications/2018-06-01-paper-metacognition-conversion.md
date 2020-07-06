@@ -1,7 +1,7 @@
 ---
 title: "Metacognition of visuomotor decisions in conversion disorder"
 collection: publications
-permalink: /publication/01.06.18-paper-metacognition-conversion
+permalink: /publication/2018-06-01-paper-metacognition-conversion
 date: 2018-06-01
 venue: 'Neuropsychologia'
 paperurl: 'https://www.ncbi.nlm.nih.gov/pubmed/29698734'
