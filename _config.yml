@@ -10,10 +10,10 @@ locale                   : "en-US"
 title                    : "JK"
 title_separator          : "-"
 name                     : &name "Julian Klug"
-description              : &description "Med student at the University of Geneva"
+description              : &description "MD"
 url                      : https://www.julianklug.com # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "monsieurwave/monsieurwave.github.io"
+repository               : "JulianKlug/monsieurwave.github.io"
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
@@ -82,7 +82,7 @@ analytics:
 author:
   name             : "Julian Klug"
   avatar           : "id4BW.jpg"
-  bio              : "Med student at University of Geneva"
+  bio              : "MD"
   location         : "Geneva, Switzerland"
   employer         :
   pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=Klug%20J%5BAuthor%5D&cauthor=true&cauthor_uid=29698734"
@@ -96,7 +96,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "monsieurwave"
+  github           : "JulianKlug"
   google_plus      :
   keybase          :
   instagram        :
