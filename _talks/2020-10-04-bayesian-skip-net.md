@@ -2,7 +2,7 @@
 title: "Bayesian Skip Net: Building on Prior Information for the Prediction and Segmentation of Stroke Lesions"
 collection: talks
 type: "Talk"
-permalink: /talks/2020-10-04-MICCAI_2020_talk
+permalink: /talks/2020-10-04-bayesian-skip-net
 venue: "Brain Lesion Workshop, MICCAI 2020"
 date: 2020-10-04
 location: "Virtual & Lima, Peru"
