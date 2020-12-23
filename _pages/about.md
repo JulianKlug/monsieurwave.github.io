@@ -12,7 +12,7 @@ I am a MD working with [Emmanuel Carrera (Hôpitaux Universitaires de Genève)](
 
 In addition to my research, I love designing practical tools to enhance the care for patients and enjoy contributing to open-source projects. I am currently working on [Kassandra](https://kassandra.julianklug.com), a tool to bring machine learning tools into my clinical practice. I have worked on [PHI](https://www.phinterface.com/), a tool aiming to connect patients to their hospital caregivers before and after their stay and had a hand in peer-to-peer communication networks whilst running Vlynt.  
 
-For a more formal account of my academic work, see my Curriculum Vitae or Google Scholar.
+For a more formal account of my academic work, see my [Curriculum Vitae](https://www.julianklug.com/files/cv_julian_klug.pdf) or [Google Scholar](https://scholar.google.com/citations?user=uvlWXnAAAAAJ&hl=en).
 
 ---
 
