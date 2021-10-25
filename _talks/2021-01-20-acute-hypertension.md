@@ -10,6 +10,6 @@ location: "Nyon, Switzerland"
 
 Hypertension aigue: Urgences et Non-Urgences.
 
-<iframe src="../files/talks/HTA_aigue.pptx&amp;action=embedview&amp;wdAr=1.7777777777777777" width="1186px" height="691px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
+<iframe src='https://view.officeapps.live.com/op/embed.aspx?src=https://www.julianklug.com/files/talks/HTA_aigue.pptx' width='100%' height='600px' frameborder='0'></iframe>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/7WQMkbb32Ns" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
