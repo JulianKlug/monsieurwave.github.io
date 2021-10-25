@@ -2,7 +2,7 @@
 title: "Activité électrique sans pouls"
 collection: talks
 type: "Talk"
-permalink: /talks/2021-01-20-acute-hypertension
+permalink: /talks/2021-01-20-pulseless-electrical-activity
 venue: "GHOL, Nyon"
 date: 2021-04-20
 location: "Nyon, Switzerland"
