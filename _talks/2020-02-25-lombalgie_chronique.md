@@ -10,4 +10,4 @@ location: "Geneva, Switzerland"
 
 Lombalgie chronique et poussées aigues en médecine de premier recours. 
 
-<iframe src="https://onedrive.live.com/embed?cid=CF5AE7353FE51DF2&amp;resid=CF5AE7353FE51DF2%21281&amp;authkey=AHNuFbrRDue1u34&amp;em=2&amp;wdAr=1.7777777777777777" width="1186px" height="691px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRXcICSxffsyOR13jEtZ6O-QTq89sm1Pajoy__lY27OGs_w-TznKB-OavBDpCo9kADzPuAvC3Szvgar/embed?start=false&loop=false&delayms=3000" frameborder="0" width="1280" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>

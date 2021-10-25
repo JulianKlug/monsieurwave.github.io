@@ -10,7 +10,7 @@ location: "Nyon, Switzerland"
 
 Activité électrique sans pouls: du choc profond à l'asystole. 
 
-<iframe src="https://unigech-my.sharepoint.com/personal/julian_klug_etu_unige_ch/_layouts/15/Doc.aspx?sourcedoc={55fa0787-b22f-46e6-ae99-4fd6fa9efb7d}&amp;action=embedview&amp;wdAr=1.7777777777777777" width="1186px" height="691px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRWB56hSMn-lnMKphK17hEA6ox2ckffdUo19b_TmeT7Zckk3WwA3pATdcosPB_gKLBJE2kaTo_uWjPy/embed?start=false&loop=false&delayms=3000" frameborder="0" width="1280" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/rV5TxfX3s7Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
