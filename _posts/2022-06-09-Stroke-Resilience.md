@@ -1,6 +1,6 @@
 ---
-title: 'An Approach to Diffusion Tensor Imaging of Auditory Brainstem Implant Candidates'
-date: 2017-09-20
+title: 'Preparing for a second attack'
+date: 2022-06-09
 permalink: /posts/research/Stroke-Resilience/
 header:
   teaser: /stroke_resilience/graphical_abstract_big_text.png
@@ -9,6 +9,8 @@ tags:
 ---
 
 > 𝗢𝘂𝗿 𝗵𝘆𝗽𝗼𝘁𝗵𝗲𝘀𝗶𝘀: the brain becomes more resilient to a second stroke after a first attack
+
+To be able to measure resilience of neural networks observed on resting state fMRI we define it as the capacity to preserve short mean path lenghts after an attack. 
 
 ![Resilience](/images/stroke_resilience/resilience_def.png "Resilience")
 
@@ -22,8 +24,8 @@ tags:
 
 𝗥𝗲𝘀𝘂𝗹𝘁𝘀: after full clinical recovery, the networks of patients having sustained a stroke 3 months beforehand were more resilient to a secondary attack
 
+Full paper: Mitsouko Assche, Julian Klug, Elisabeth Dirren, Jonas Richiardi, Emmanuel Carrera, "Preparing for a Second Attack: A Lesion Simulation Study on Network Resilience After Stroke." Stroke, 2022
 
-stroke
 ##### Code availability
 
 All code is available at [my github](https://github.com/JulianKlug/stroke-resilience "JK's Github"). 
