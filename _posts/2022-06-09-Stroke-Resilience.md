@@ -24,8 +24,10 @@ To be able to measure resilience of neural networks observed on resting state fM
 
 𝗥𝗲𝘀𝘂𝗹𝘁𝘀: after full clinical recovery, the networks of patients having sustained a stroke 3 months beforehand were more resilient to a secondary attack
 
-Full paper: Mitsouko Assche, Julian Klug, Elisabeth Dirren, Jonas Richiardi, Emmanuel Carrera, "Preparing for a Second Attack: A Lesion Simulation Study on Network Resilience After Stroke." Stroke, 2022
+_Full paper_: Mitsouko Assche, Julian Klug, Elisabeth Dirren, Jonas Richiardi, Emmanuel Carrera, "Preparing for a Second Attack: A Lesion Simulation Study on Network Resilience After Stroke." Stroke, 2022
 
 ##### Code availability
 
 All code is available at [my github](https://github.com/JulianKlug/stroke-resilience "JK's Github"). 
+
+![Resilience](/images/stroke_resilience/graphical_abstract_big_text.png "Resilience")
