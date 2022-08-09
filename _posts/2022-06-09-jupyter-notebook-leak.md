@@ -29,10 +29,13 @@ __.gitconfig:__
         required
 ```
 
-3. Add custom .gitconfig to local git config: `git config --local include.path .gitconfig`
+3. Add custom .gitconfig to local git config: `git config --local include.path ../.gitconfig`
 - __N.B.__: this step has to be repeated every time the repo is cloned.
 
 5. Verify that custom config was added to local git config
+
+--> This hook should be run every time a file is added (`git add`)
+
 
 __.git/config:__
 ```
