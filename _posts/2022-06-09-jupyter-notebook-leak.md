@@ -27,12 +27,13 @@ __.gitconfig:__
 [filter "jupyternotebook"]
         clean = jupyter nbconvert --to=notebook --ClearOutputPreprocessor.enabled=True --stdout %f
         required
+        smudge = cat
 ```
 
 3. Add custom .gitconfig to local git config: `git config --local include.path ../.gitconfig`
 - __N.B.__: this step has to be repeated every time the repo is cloned.
 
-5. Verify that custom config was added to local git config
+4. Verify that custom config was added to local git config
 
 --> This hook should be run every time a file is added (`git add`)
 
@@ -41,9 +42,29 @@ __.git/config:__
 ```
 ...
 [include]
-        path = .gitconfig
+        path = ../.gitconfig
 ```
 
+### Use github actions to prevent committing executed notebooks
+
+*Rationale*: Prevent accidental commits of executed notebooks by checking every push with github actions.
+
+1. Create a .github/workflows/main.yml file in your repo
+
+__.github/workflows/main.yml:__
+```yaml
+name: GitHub Pre-Push actions
+on: [push]
+jobs:
+  ensure_clean_jupyter_notebooks:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: ResearchSoftwareActions/EnsureCleanNotebooksAction@1.1
+      with:
+        disable-checks: execution_count
+```
+
+This action is provided by [ResearchSoftwareActions](https://github.com/marketplace/actions/ensure-clean-jupyter-notebooks).
 
 ## B. In case of a data leak already on github
 ### Clear all notebooks
