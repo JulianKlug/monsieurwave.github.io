@@ -12,7 +12,7 @@ tags:
 *Rationale*: run a filter over certain files before they are added to git. This will leave the original file on disk as-is, but commit the "cleaned" version.
 
 
-1. Create a .gitattributes file in your repo
+**1-** Create a .gitattributes file in your repo
 
 __.gitattributes:__
 ```
@@ -20,7 +20,7 @@ __.gitattributes:__
 ```
 
 
-2. Create a .gitconfig file in your repo
+**2-** Create a .gitconfig file in your repo
 
 __.gitconfig:__
 ```
@@ -30,10 +30,10 @@ __.gitconfig:__
         smudge = cat
 ```
 
-3. Add custom .gitconfig to local git config: `git config --local include.path ../.gitconfig`
+**3-** Add custom .gitconfig to local git config: `git config --local include.path ../.gitconfig`
 - __N.B.__: this step has to be repeated every time the repo is cloned.
 
-4. Verify that custom config was added to local git config
+**4-** Verify that custom config was added to local git config
 
 --> This hook should be run every time a file is added (`git add`)
 
