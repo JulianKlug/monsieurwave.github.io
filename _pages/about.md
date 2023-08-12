@@ -25,6 +25,7 @@ Academic Projects
 
 Non-Academic Projects: 
 - [Kassandra](https://kassandra.julianklug.com), bringing machine learning safely to clinical practice
+- [FentaSim](http://fentasim.julianklug.com), a tool to simulate effect site concentrations of fentanyl
 - [PHI](https://www.creageneve.com/2020/02/14/prix-une-team-qui-innove/), connect patients to their hospital 
 - Vlynt, a peer-to-peer content delivery network
 - I try to help out with great open-source projects, such as [nibabel](https://github.com/nipy/nibabel/commits?author=JulianKlug) and created some open-source tools such as [RandAugment3D](https://github.com/JulianKlug/RandAugment-3D)
