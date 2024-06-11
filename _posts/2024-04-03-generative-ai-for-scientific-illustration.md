@@ -1,6 +1,6 @@
 ---
 title: 'Generative AI for scientific illustration'
-date: 2024-04-03
+date: 2024-06-11
 permalink: /posts/generative-ai-for-scientific-illustration
 tags:
   - ICU
@@ -26,7 +26,7 @@ Finally, it often helps to correct minor errors manually. This can be done in a 
 Current generations of generative AI are still limited in their ability to generate images outside their training data. 
 A few practical considerations are listed below:
 
-##### _Where can generative AI be helpful?_
+### _Where can generative AI be helpful?_
 
 Generative AI performs well for: 
 - icons
@@ -35,7 +35,7 @@ Generative AI performs well for:
 - joining existing images
 - generate variations of an existing image
 
-##### _Where will generative AI fail?_
+### _Where will generative AI fail?_
 
 Generative AI will fail for: 
 - medical images: US, CT, MRI, Rx 
@@ -46,7 +46,7 @@ Generative AI will fail for:
 
 Common generative AI models will generally fail when asked to create specific medical data representations. However, specific models exist for this aim [^4].
 
-##### _What tool to use?_
+### _What tool to use?_
 
 With the current pace of updates in the field, any list will be outdated in a few months. 
 However, here are a few models that are currently popular: 
