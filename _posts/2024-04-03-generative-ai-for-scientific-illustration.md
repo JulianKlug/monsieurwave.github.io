@@ -9,9 +9,13 @@ tags:
 
 Good illustrations are key for efficient scientific communication, education, and dissemination of knowledge. An image can easily convey complex concepts that are sometimes only cumbersomely captured in writing. In this light, more and more authors are making use of generative AI tools to create illustrations for their scientific publications. 
 
+![Prompt input](/images/generative_ai/prompt_input.png "Waiting for your input")
+
 ### _On the importance of checking model output_
 
 With more and more illustrations created by AI, many inaccurate or misleading images are beeing published. Some with malicious intent [^1], others due to lack of knowledge on how to use the tools. Do these small errors matter? I would argue, that they are the image equivalent of spelling errors. Although the overall message might still be conveyed, the reader might be distracted by the error, or even worse, misinterpret the image. As most scientist are not trained in image editing, they appear more difficult to correct than a spelling error. However, with the right chaining of tools, this can be done in a few minutes.  
+
+![Example of generated image](/images/generative_ai/labeled_image.png "Labeled image")
 
 ### _The iterative process_
 
@@ -21,7 +25,9 @@ Once a rough idea emerges, the image can be further refined. Areas can be erased
 
 Finally, it often helps to correct minor errors manually. This can be done in a simple image editing software [^3].
 
-![Iterative process](/images/random/iterative_process.png "Iterative process")
+![Iterative process](/images/generative_ai/iterative_process.png "Iterative process")
+
+![Combination of images](/images/generative_ai/combination_correction.png "Correction through combination of images")
 
 Current generations of generative AI are still limited in their ability to generate images outside their training data. 
 A few practical considerations are listed below:
