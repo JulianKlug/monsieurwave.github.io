@@ -3,7 +3,8 @@ title: 'Can Pupillometry help to detect Delayed Cerebral Ischemia in SAH?'
 date: 2022-06-09
 permalink: /posts/research/Pupillometry-DCI/
 header:
-  teaser: /pupillometry_dci/thumbnail.png
+  header: /pupillometry_dci/thumbnail.png
+  og_image: /pupillometry_dci/thumbnail.png
 tags:
   - research
 ---

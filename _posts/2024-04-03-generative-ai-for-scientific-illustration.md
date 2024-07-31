@@ -2,6 +2,9 @@
 title: 'Generative AI for scientific illustration'
 date: 2024-06-11
 permalink: /posts/generative-ai-for-scientific-illustration
+header:
+  header: /images/generative_ai/prompt_input.png
+  og_image: /images/generative_ai/prompt_input.png
 tags:
   - ICU
   - AI
