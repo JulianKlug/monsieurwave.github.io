@@ -2,15 +2,16 @@
 title: 'Can Pupillometry help to detect Delayed Cerebral Ischemia in SAH?'
 date: 2024-07-31
 permalink: /posts/research/Pupillometry-DCI/
-header:
-  teaser: /pupillometry_dci/thumbnail.png
-  og_image: /pupillometry_dci/thumbnail.png
+#header:
+#  teaser: /pupillometry_dci/thumbnail.png
+#  og_image: /pupillometry_dci/thumbnail.png
 tags:
   - research
 ---
 
 > **Key Question**: Can pupillometry be used to monitor and detect delayed cerebral ischemia (DCI) in patients with aneurysmal subarachnoid hemorrhage (aSAH)?
 
+![Concept](/images/pupillometry_dci/thumbnail.png "Concept")
 
 **Context** 
 In patients with reduced state of consciousness or non-motor manifestations of ischemia such as confusion, the diagnosis of DCI is often complicated and the currently available tools are limited. 
