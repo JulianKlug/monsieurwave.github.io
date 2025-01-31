@@ -1,14 +1,14 @@
 ---
 layout: archive
 permalink: /year-archive/
-title: "2020 - Blog posts"
+title: "Blog posts"
 author_profile: true
 redirect_from:
   - /wordpress/blog-posts/
 ---
 
 {% include base_path %}
-{% capture written_year %}'2020'{% endcapture %}
+{% capture written_year %}'None'{% endcapture %}
 {% for post in site.posts %}
   {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
   {% if year != written_year %}
