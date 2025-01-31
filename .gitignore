@@ -1,11 +1,19 @@
+# Ignore the contents of the _site directory and other cache directories
 .idea/
 _site/
 .bundle/
 path/
+.sass-cache/
 
+# Ignore the directory for local files during development
+local/
 # MAC stuff
 .DS_Store
 */.DS_Store
 
-#pycharm
-.idea/
+# Ignore the Gemfile that is generated
+Gemfile.lock
+
+# Ingore files created by npm
+node_modules
+package-lock.json
