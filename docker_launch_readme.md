@@ -1,0 +1,1 @@
+Launch docker with: docker run -p 2089:4000 -e "JEKYLL_ENV=docker" -d --restart=always  -v $(pwd):/usr/src/app jk-website 
