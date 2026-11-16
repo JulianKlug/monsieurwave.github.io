@@ -41,6 +41,9 @@ const LIFT_SHIFT = 0;
 const SIDE_SHIFT_MIN_WIDTH = 900;
 const TAG_TITLE_MAX = 64;
 const BASE_COLOR = "#f6f5f1";
+const TAG_OFFSET_PX = 14;
+const TAG_RIGHT = `${TAG_OFFSET_PX}px,-50%`;
+const TAG_LEFT = `calc(-100% - ${TAG_OFFSET_PX}px),-50%`;
 const SLAB_COLOR = "#e6e4dc";
 const EDGE_COLOR = "#b9b6aa";
 const GRID_COLOR = "#d4d1c6";
@@ -545,7 +548,7 @@ function boot() {
     addTag(label, "lane", [-SIZE_X / 2 - 0.2, 0, zOfLane(id)], "-100%,-50%", `var(--${id})`);
   }
 
-  const paperTag = addTag("", "paper-tag", [0, 0, 0], "14px,-50%");
+  const paperTag = addTag("", "paper-tag", [0, 0, 0], TAG_RIGHT);
   paperTag.el.hidden = true;
   let hovered = null;
   let hoveredGlyph = null;
@@ -790,6 +793,11 @@ function boot() {
       const t = active.work.title;
       paperTag.el.textContent = `${active.work.year} · ${t.length > TAG_TITLE_MAX ? t.slice(0, TAG_TITLE_MAX) + "…" : t}`;
     }
+
+      // Flip the tag to the pin's left when it would run past the frame's right edge.
+      v.copy(paperTag.world).project(camera);
+      const fitsRight = ((v.x + 1) / 2) * w + TAG_OFFSET_PX + paperTag.el.offsetWidth <= w;
+      paperTag.anchor = fitsRight ? TAG_RIGHT : TAG_LEFT;
 
     for (const tag of tags) {
       if (tag.el.hidden) continue;
