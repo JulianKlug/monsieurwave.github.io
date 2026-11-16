@@ -39,11 +39,12 @@ const WIDE_ASPECT = 1.6;
 const SIDE_SHIFT = 0.04;
 const LIFT_SHIFT = 0;
 const SIDE_SHIFT_MIN_WIDTH = 900;
+const MOBILE_QUERY = "(max-width: 720px)"; // matches the mobile breakpoint in style.css
 const TAG_TITLE_MAX = 64;
-const BASE_COLOR = "#f6f5f1";
 const TAG_OFFSET_PX = 14;
 const TAG_RIGHT = `${TAG_OFFSET_PX}px,-50%`;
 const TAG_LEFT = `calc(-100% - ${TAG_OFFSET_PX}px),-50%`;
+const BASE_COLOR = "#f6f5f1";
 const SLAB_COLOR = "#e6e4dc";
 const EDGE_COLOR = "#b9b6aa";
 const GRID_COLOR = "#d4d1c6";
@@ -792,12 +793,12 @@ function boot() {
       paperTag.world.set(active.x, active.y + PIN_LIFT, active.z);
       const t = active.work.title;
       paperTag.el.textContent = `${active.work.year} · ${t.length > TAG_TITLE_MAX ? t.slice(0, TAG_TITLE_MAX) + "…" : t}`;
-    }
 
       // Flip the tag to the pin's left when it would run past the frame's right edge.
       v.copy(paperTag.world).project(camera);
       const fitsRight = ((v.x + 1) / 2) * w + TAG_OFFSET_PX + paperTag.el.offsetWidth <= w;
       paperTag.anchor = fitsRight ? TAG_RIGHT : TAG_LEFT;
+    }
 
     for (const tag of tags) {
       if (tag.el.hidden) continue;
@@ -830,6 +831,9 @@ function boot() {
       if (is3d) resize();
     }),
   );
+
+  // Phones: the 3D terrain is cramped and drag-to-orbit fights page scroll, so open on the network.
+  if (matchMedia(MOBILE_QUERY).matches) document.querySelector('.views button[data-view="network"]').click();
 
   document.addEventListener("map:refresh", recompute);
 

@@ -102,8 +102,11 @@ footer { max-width: 1080px; margin: 0 auto; padding: 2rem 1.5rem 3rem; color: va
 
 @media (max-width: 720px) {
   #stage { height: 680px; }
-  .title { left: 1rem; top: 1rem; }
-  .views { top: auto; bottom: 8.5rem; right: 1rem; }
+  /* Toggle sits alone on the top row, clear of the legend, with ~44px tap targets. */
+  .title { left: 1rem; top: 3.2rem; }
+  .views { top: 0; right: .75rem; gap: .5rem; }
+  .views button { padding: 1rem .35rem; border-bottom: 0; }
+  .views button[aria-pressed="true"] { text-decoration: underline; text-underline-offset: .5em; }
   .controls { left: 1rem; right: 1rem; bottom: 1rem; flex-direction: column; align-items: flex-start; gap: .8rem; }
   .year input { width: 50vw; }
   #panel { top: auto; bottom: 1rem; right: 1rem; left: 1rem; width: auto; z-index: 2; }
