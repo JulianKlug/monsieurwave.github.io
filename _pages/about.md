@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I am a critical care fellow currently training in the Lausanne University Hospital and working in the [Geneva Stroke Lab](https://www.carreralab.com/) led by Prof. Emmanuel Carrera (Hôpitaux Universitaires de Genève). Previously, I had the opportunity to learn and work at the [MIP-lab](https://miplab.epfl.ch/) headed by Prof. Dimitri Van De Ville (EPFL) and the [Lee Lab](https://oto.hms.harvard.edu/people/daniel-lee) directed by Dr. Daniel Lee (Harvard, MEEI). My research centers on biomedical applications of machine learning, with a special focus on acute ischemic stroke.
+I am a critical care physician currently working in the ICU of Lausanne University Hospital and working in the [Geneva Stroke Lab](https://www.carreralab.com/) led by Prof. Emmanuel Carrera (Hôpitaux Universitaires de Genève). I further collaborate with Prof. Urs Pietsch on improving neurocritical and prehospital care. Previously, I had the opportunity to learn and work at the [MIP-lab](https://miplab.epfl.ch/) headed by Prof. Dimitri Van De Ville (EPFL) and the [Lee Lab](https://oto.hms.harvard.edu/people/daniel-lee) directed by Dr. Daniel Lee (Harvard, MEEI). My research centers on biomedical applications of artificial intelligence & machine learning, with a special focus on neurocritical care.
 
 In addition to my clinical work and research, I love designing practical tools to enhance the care for patients and enjoy contributing to open-source projects. See [Kassandra](https://kassandra.julianklug.com), a tool to bring machine learning into my clinical practice. I have worked on PHI, a tool aiming to connect patients to their hospital caregivers before and after their stay and had a hand in peer-to-peer communication networks whilst running Vlynt.  
 
@@ -19,13 +19,13 @@ For a more formal account of my academic work, see my [Curriculum Vitae](https:/
 Academic Projects
 - Machine Learning in the prediction of outcome after acute ischemic stroke using clinical and imaging parameters - [📄](https://www.nature.com/articles/s43856-024-00666-w) & [🌐](https://opsum.julianklug.com)
 - Prediction of delayed cerebral ischemia in subarachnoid hemorrhage - [📄](https://journals.lww.com/ccejournal/fulltext/2024/08000/dynamically_normalized_pupillometry_for_detecting.2.aspx)
-- Brains and Donuts, a topological study of brain perfusion 
 - [Formation continue (malgré le COVID)](https://www.youtube.com/playlist?list=PLReS_CqwBJr3Tj8cSut52INgPxar1XSxY), an improvised and socially-distanced attempt to provide lectures to medical and surgical residents (in french) 
 
 ---
 
 Non-Academic Projects: 
 - [Kassandra](https://kassandra.julianklug.com), bringing machine learning safely to clinical practice
+- [PDF2Calendar](https://pdf2calendar.julianklug.com), converting hospital shift pdf files to modern calendars   
 - [FentaSim](http://fentasim.julianklug.com), a tool to simulate effect site concentrations of fentanyl
 - [DD4PH](https://dd4ph.julianklug.com), a tool to help choosing the right measure of cardiac output for the diagnosis of pulmonary hypertension
 - PHI, connect patients to their hospital 
