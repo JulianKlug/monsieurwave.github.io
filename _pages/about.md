@@ -57,8 +57,10 @@ A topographic map of my publications: height shows how much I have published in 
   };
   revealPubs();
   window.addEventListener("hashchange", revealPubs);
+  /* Same-page header click: the theme's smooth-scroll handles scrolling but
+     never sets the hash, so open the list directly. */
   document.addEventListener("click", (e) => {
-    if (e.target.closest('a[href$="#publications"]')) setTimeout(revealPubs);
+    if (e.target.closest('a[href$="#publications"]')) document.getElementById("publications").open = true;
   });
 
   fetch("/academic_map/data/works.json")
