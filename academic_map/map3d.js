@@ -62,7 +62,11 @@ function mulberry32(seed) {
   };
 }
 
-// ---- per-theme wireframe glyphs: unit-sized line drawings in the XY plane ----
+// ---- per-theme glyphs: small 3D ball-and-stick models, unit radius ----
+//
+//        o            atoms: solid spheres, radius per atom
+//       / \           bonds: thin lines between atom centres
+//      o---o          the whole model spins slowly above its peak
 const GLYPH_SIZE = 0.5;
 const GLYPH_LIFT = 1.6;
 const GLYPH_SPREAD = 0.45; // x offset per lane so glyphs over one peak do not overlap
@@ -70,14 +74,17 @@ const SUMMIT_RANGE_X = 1.4;
 const SUMMIT_RANGE_Z = 0.9;
 const SUMMIT_STEP = 0.1;
 const SLOPE_OFFSET_Z = 0.55; // how far down the front slope (toward the viewer) the leader line lands
-const GLYPH_OPACITY = 0.95;
+const BOND_OPACITY = 0.55;
 const STEM_OPACITY = 0.9;
 const SUMMIT_RING_RADIUS = 0.16;
 const GLYPH_DARKEN = 0.7; // line art on a light page needs more contrast than the fills
 const STEM_GAP = 0.85; // fraction of glyph size left empty between stem and glyph centre
 const CIRCLE_SEGMENTS = 40;
-const NODE_SEGMENTS = 14;
-const NODE_RADIUS = 0.09;
+const ATOM = 0.07;
+const ATOM_SEGMENTS = [12, 8];
+const GLYPH_SPIN = 0.25; // rad/s
+const GLYPH_HOVER_SCALE = 1.2;
+const GLYPH_HIT_RADIUS = 1.1; // generous invisible sphere, easier to click than thin lines
 
 const arc = (cx, cy, rx, ry, a0, a1, n = CIRCLE_SEGMENTS) =>
   Array.from({ length: n }, (_, i) => {
@@ -86,125 +93,218 @@ const arc = (cx, cy, rx, ry, a0, a1, n = CIRCLE_SEGMENTS) =>
     return [cx + rx * Math.cos(t0), cy + ry * Math.sin(t0), cx + rx * Math.cos(t1), cy + ry * Math.sin(t1)];
   });
 const circle = (cx, cy, rx, ry = rx, n = CIRCLE_SEGMENTS) => arc(cx, cy, rx, ry, 0, 2 * Math.PI, n);
-const node = (x, y, r = NODE_RADIUS) => circle(x, y, r, r, NODE_SEGMENTS);
 
-const polyline = (pts, closed = false) => {
-  const segs = [];
-  for (let i = 0; i < pts.length - 1; i++) segs.push([...pts[i], ...pts[i + 1]]);
-  if (closed) segs.push([...pts[pts.length - 1], ...pts[0]]);
-  return segs;
-};
+// Tiny model builder: atom() returns its index, bond() joins two indices.
+function model() {
+  const atoms = [];
+  const bonds = [];
+  const atom = (x, y, z, r = ATOM) => atoms.push([x, y, z, r]) - 1;
+  const bond = (a, b) => bonds.push([a, b]);
+  return { atoms, bonds, atom, bond };
+}
 
-// Smooth sine-modulated curve between two points (gyri, trace lines).
-const wave = (x0, y0, x1, y1, amp, cycles, n = 24) => {
-  const pts = Array.from({ length: n + 1 }, (_, i) => {
-    const t = i / n;
-    return [x0 + (x1 - x0) * t, y0 + (y1 - y0) * t + amp * Math.sin(t * cycles * 2 * Math.PI)];
+const ring = (m, n, radius, y, r, phase = 0) =>
+  Array.from({ length: n }, (_, i) => {
+    const a = phase + (i / n) * 2 * Math.PI;
+    return m.atom(radius * Math.cos(a), y, radius * Math.sin(a), r);
   });
-  return polyline(pts);
-};
 
-// Straight edge between two node centres, shortened so it stops at the node outlines.
-const link = ([ax, ay], [bx, by], trim = NODE_RADIUS) => {
-  const dx = bx - ax;
-  const dy = by - ay;
-  const len = Math.hypot(dx, dy);
-  const ux = dx / len;
-  const uy = dy / len;
-  return [[ax + ux * trim, ay + uy * trim, bx - ux * trim, by - uy * trim]];
-};
+// Arterial tree, one branch occluded by a large clot with no flow beyond it.
+function strokeGlyph() {
+  const m = model();
+  const BRANCH_ANGLE = 0.5;
+  const SHRINK = 0.68;
+  const DEPTH = 3;
+  const CLOT_PATH = "10";
 
-const diamond = (cx, cy, r) => polyline([[cx, cy + r], [cx + r, cy], [cx, cy - r], [cx - r, cy]], true);
+  const grow = (parent, p, dir, len, depth, path) => {
+    if (depth === DEPTH) return;
 
-// Diagonal hatching clipped to a circle.
-const hatch = (cx, cy, r, step) => {
-  const segs = [];
-  const d = [Math.SQRT1_2, -Math.SQRT1_2];
-  const n = [Math.SQRT1_2, Math.SQRT1_2];
-  for (let t = -r + step / 2; t < r; t += step) {
-    const half = Math.sqrt(r * r - t * t);
-    segs.push([cx + n[0] * t - d[0] * half, cy + n[1] * t - d[1] * half, cx + n[0] * t + d[0] * half, cy + n[1] * t + d[1] * half]);
+    // Each generation splits in a plane turned 90° from the previous one: a 3D tree.
+    const side = new THREE.Vector3(1, 0, 0).applyAxisAngle(new THREE.Vector3(0, 1, 0), (depth * Math.PI) / 2);
+    [-1, 1].forEach((sign, k) => {
+      const branchPath = path + k;
+      const d = dir.clone().applyAxisAngle(side, sign * BRANCH_ANGLE);
+      const q = p.clone().addScaledVector(d, len);
+      const isClot = branchPath === CLOT_PATH;
+      const child = m.atom(q.x, q.y, q.z, isClot ? ATOM * 2.4 : ATOM * (1 - depth * 0.2));
+      m.bond(parent, child);
+      if (!isClot) grow(child, q, d, len * SHRINK, depth + 1, branchPath);
+    });
+  };
+
+  const root = m.atom(0, -1, 0, ATOM * 1.3);
+  const fork = m.atom(0, -0.35, 0, ATOM);
+  m.bond(root, fork);
+  grow(fork, new THREE.Vector3(0, -0.35, 0), new THREE.Vector3(0, 1, 0), 0.62, 0, "");
+  return m;
+}
+
+// Connectome: icosahedral shell of regions, a central hub, one lost spoke.
+function networkGlyph() {
+  const m = model();
+  const geo = new THREE.IcosahedronGeometry(0.9, 0);
+  const pos = geo.attributes.position;
+  const key = (i) => [pos.getX(i), pos.getY(i), pos.getZ(i)].map((v) => v.toFixed(3)).join();
+
+  // Icosahedron geometry repeats vertices per face: dedupe, then bond each face edge once.
+  const ids = new Map();
+  const idOf = (i) => {
+    const k = key(i);
+    if (!ids.has(k)) ids.set(k, m.atom(pos.getX(i), pos.getY(i), pos.getZ(i)));
+    return ids.get(k);
+  };
+  const seen = new Set();
+  for (let f = 0; f < pos.count; f += 3) {
+    const tri = [idOf(f), idOf(f + 1), idOf(f + 2)];
+    [[0, 1], [1, 2], [2, 0]].forEach(([a, b]) => {
+      const e = [tri[a], tri[b]].sort().join();
+      if (seen.has(e)) return;
+      seen.add(e);
+      m.bond(tri[a], tri[b]);
+    });
   }
-  return segs;
-};
 
-// Axial brain slice: outline, interhemispheric fissure, gyri, hatched lesion.
-const strokeGlyph = () => [
-  ...arc(0, 0, 1, 0.82, -Math.PI * 0.46, Math.PI * 1.46),
-  ...polyline([[0, 0.8], [0, 0.35]]),
-  ...polyline([[0, -0.8], [0, -0.3]]),
-  ...wave(-0.85, 0.3, -0.12, 0.36, 0.07, 2.5),
-  ...wave(-0.9, -0.05, -0.12, -0.02, 0.07, 3),
-  ...wave(-0.8, -0.4, -0.12, -0.38, 0.07, 2.5),
-  ...wave(0.12, 0.5, 0.8, 0.45, 0.07, 2.5),
-  ...wave(0.12, -0.45, 0.8, -0.42, 0.07, 2.5),
-  ...circle(0.5, 0.04, 0.2),
-  ...hatch(0.5, 0.04, 0.2, 0.1),
-];
-
-// Network with a hub, ring of nodes and one broken (dashed) link
-const NET_HUB = [0, 0];
-const NET_RING = Array.from({ length: 6 }, (_, i) => {
-  const a = (i / 6) * 2 * Math.PI + Math.PI / 6;
-  return [0.85 * Math.cos(a), 0.85 * Math.sin(a)];
-});
-const networkGlyph = () => {
-  const segs = [];
-  NET_RING.forEach((p, i) => {
-    segs.push(...link(p, NET_RING[(i + 1) % NET_RING.length]));
-    if (i === 2) {
-      // broken spoke: two short stubs with a gap
-      const [x, y] = p;
-      segs.push([x * 0.9, y * 0.9, x * 0.62, y * 0.62], [x * 0.38, y * 0.38, x * 0.18, y * 0.18]);
-      return;
-    }
-    segs.push(...link(NET_HUB, p, NODE_RADIUS * 1.6));
+  const hub = m.atom(0, 0, 0, ATOM * 1.8);
+  const SPOKE_EVERY = 2;
+  const LOST_SPOKE = 4;
+  [...ids.values()].forEach((v, i) => {
+    if (i % SPOKE_EVERY || i === LOST_SPOKE) return;
+    m.bond(hub, v);
   });
-  NET_RING.forEach(([x, y]) => segs.push(...node(x, y)));
-  segs.push(...node(0, 0, NODE_RADIUS * 1.6));
-  return segs;
-};
+  return m;
+}
 
-// Eye / pupillometry: iris ring with radial ticks around a pupil
-const neuroGlyph = () => {
-  const segs = [...circle(0, 0, 0.92), ...circle(0, 0, 0.62), ...circle(0, 0, 0.28)];
-  const TICKS = 24;
-  for (let i = 0; i < TICKS; i++) {
-    const a = (i / TICKS) * 2 * Math.PI;
-    segs.push([0.34 * Math.cos(a), 0.34 * Math.sin(a), 0.58 * Math.cos(a), 0.58 * Math.sin(a)]);
-  }
-  segs.push(...arc(0, 0, 0.17, 0.17, Math.PI * 0.55, Math.PI * 0.95, 8)); // glint
-  return segs;
-};
+// Pupil: iris fibres run from a ring of small atoms to a large central pupil.
+function neuroGlyph() {
+  const m = model();
+  const pupil = m.atom(0, 0, 0, ATOM * 2.6);
+  const inner = ring(m, 8, 0.42, 0, ATOM * 0.8);
+  const outer = ring(m, 16, 0.9, 0, ATOM * 0.7);
 
-// Helicopter, side view: cabin, window, tail boom + fin, rotor, skids
-const heliGlyph = () => [
-  ...circle(-0.1, 0, 0.55, 0.36),
-  ...arc(-0.3, 0.03, 0.22, 0.2, Math.PI * 0.45, Math.PI * 1.1, 10),
-  ...polyline([[0.42, 0.1], [0.98, 0.2]]),
-  ...polyline([[0.42, -0.06], [0.98, 0.13]]),
-  ...polyline([[0.9, 0.18], [1.02, 0.5], [0.78, 0.16]]),
-  ...polyline([[-0.1, 0.35], [-0.1, 0.55]]),
-  ...wave(-1, 0.56, 0.8, 0.56, -0.025, 0.5, 12),
-  ...polyline([[-0.55, -0.55], [0.4, -0.55]]),
-  ...polyline([[-0.35, -0.34], [-0.42, -0.55]]),
-  ...polyline([[0.15, -0.34], [0.22, -0.55]]),
-];
+  // Ring lies in XY so the disk faces the viewer as it spins.
+  m.atoms.forEach((a) => ([a[1], a[2]] = [a[2], a[1]]));
 
-// Three-layer neural net with round nodes
-const NET_LAYERS = [[-0.9, [0.55, 0, -0.55]], [0, [0.8, 0.27, -0.27, -0.8]], [0.9, [0.55, 0, -0.55]]];
-const netGlyph = () => {
-  const segs = [];
-  for (let c = 0; c < NET_LAYERS.length - 1; c++) {
-    for (const ya of NET_LAYERS[c][1]) {
-      for (const yb of NET_LAYERS[c + 1][1]) {
-        segs.push(...link([NET_LAYERS[c][0], ya], [NET_LAYERS[c + 1][0], yb]));
-      }
+  outer.forEach((o, i) => m.bond(o, outer[(i + 1) % outer.length]));
+  inner.forEach((n, i) => {
+    m.bond(n, inner[(i + 1) % inner.length]);
+    m.bond(n, outer[2 * i]);
+    m.bond(n, pupil);
+  });
+  return m;
+}
+
+// Helicopter, nose toward -x:
+//
+//        ─────o─────          main rotor on a short mast
+//          .--+--.
+//         (  cabin )===o==o┤  truss tail boom, fin, tail rotor
+//          '-----'
+//        ‿__|___|__           skids on struts
+function heliGlyph() {
+  const m = model();
+  const CABIN = [-0.2, 0, 0];
+  const CABIN_R = [0.45, 0.32, 0.3];
+  const RING_ATOMS = 10;
+  const SMALL = ATOM * 0.55;
+
+  // Closed ellipse of atoms through the cabin centre, spanned by two unit axes.
+  const ellipse = (u, v, ru, rv) => {
+    const ids = Array.from({ length: RING_ATOMS }, (_, i) => {
+      const a = (i / RING_ATOMS) * 2 * Math.PI;
+      const p = CABIN.map((c, k) => c + ru * Math.cos(a) * u[k] + rv * Math.sin(a) * v[k]);
+      return m.atom(...p, ATOM * 0.4);
+    });
+    ids.forEach((id, i) => m.bond(id, ids[(i + 1) % ids.length]));
+    return ids;
+  };
+
+  // Cabin: side profile plus waistline, a light wire cage.
+  const [rx, ry, rz] = CABIN_R;
+  ellipse([1, 0, 0], [0, 1, 0], rx, ry);
+  ellipse([1, 0, 0], [0, 0, 1], rx, rz);
+
+  // Tail boom: tapering two-rail truss with zig-zag struts.
+  const BOOM_STEPS = 4;
+  const upper = [];
+  const lower = [];
+  for (let i = 0; i <= BOOM_STEPS; i++) {
+    const t = i / BOOM_STEPS;
+    const x = 0.25 + 0.75 * t;
+    upper.push(m.atom(x, 0.12 + 0.06 * t, 0, SMALL));
+    lower.push(m.atom(x, -0.06 + 0.18 * t, 0, SMALL));
+    if (i) {
+      m.bond(upper[i - 1], upper[i]);
+      m.bond(lower[i - 1], lower[i]);
+      m.bond(i % 2 ? lower[i - 1] : upper[i - 1], i % 2 ? upper[i] : lower[i]);
     }
   }
-  NET_LAYERS.forEach(([x, ys]) => ys.forEach((y) => segs.push(...node(x, y))));
-  return segs;
-};
+
+  // Fin and tail rotor.
+  const tail = upper[BOOM_STEPS];
+  const finTop = m.atom(1.1, 0.48, 0, SMALL);
+  m.bond(tail, finTop);
+  m.bond(lower[BOOM_STEPS], finTop);
+  const tailHub = m.atom(1.05, 0.3, 0.06, ATOM * 0.8);
+  m.bond(tailHub, m.atom(1.05, 0.52, 0.06, SMALL));
+  m.bond(tailHub, m.atom(1.05, 0.08, 0.06, SMALL));
+
+  // Mast and four-blade main rotor.
+  const mastBase = m.atom(CABIN[0], ry, 0, SMALL);
+  const hub = m.atom(CABIN[0], ry + 0.16, 0, ATOM * 1.3);
+  m.bond(mastBase, hub);
+  const BLADE = 0.95;
+  [[BLADE, 0], [-BLADE, 0], [0, BLADE], [0, -BLADE]].forEach(([x, z]) => m.bond(hub, m.atom(CABIN[0] + x, ry + 0.16, z, SMALL)));
+
+  // Skids: rails with an upturned nose, two struts each.
+  const SKID_Y = -0.52;
+  [-0.24, 0.24].forEach((z) => {
+    const tip = m.atom(-0.8, SKID_Y + 0.1, z, SMALL);
+    const front = m.atom(-0.6, SKID_Y, z, SMALL);
+    const back = m.atom(0.3, SKID_Y, z, SMALL);
+    m.bond(tip, front);
+    m.bond(front, back);
+    [-0.42, 0.05].forEach((x) => m.bond(m.atom(x, -0.24, z * 0.75, SMALL), m.atom(x - 0.04, SKID_Y, z, SMALL)));
+  });
+
+  // Centre the silhouette on the spin axis.
+  const X_SHIFT = -0.12;
+  m.atoms.forEach((a) => (a[0] += X_SHIFT));
+  return m;
+}
+
+// Neural net funnel: a 3×3 input plane, 2×2 hidden plane, one output.
+function netGlyph() {
+  const m = model();
+  const plane = (x, n, spacing) => {
+    const ids = [];
+    const half = ((n - 1) * spacing) / 2;
+    for (let i = 0; i < n; i++) {
+      for (let j = 0; j < n; j++) ids.push(m.atom(x, i * spacing - half, j * spacing - half, ATOM * 0.9));
+    }
+    return ids;
+  };
+  const input = plane(-0.85, 3, 0.55);
+  const hidden = plane(0, 2, 0.5);
+  const output = [m.atom(0.85, 0, 0, ATOM * 1.6)];
+  [[input, hidden], [hidden, output]].forEach(([a, b]) => a.forEach((i) => b.forEach((j) => m.bond(i, j))));
+  return m;
+}
+
+// Octahedron around a central atom.
+function otherGlyph() {
+  const m = model();
+  const c = m.atom(0, 0, 0, ATOM * 1.5);
+  const R = 0.8;
+  const v = [[R, 0, 0], [-R, 0, 0], [0, R, 0], [0, -R, 0], [0, 0, R], [0, 0, -R]].map(([x, y, z]) => m.atom(x, y, z));
+  v.forEach((a) => m.bond(c, a));
+  for (let i = 0; i < v.length; i++) {
+    for (let j = i + 1; j < v.length; j++) {
+      if (Math.floor(i / 2) !== Math.floor(j / 2)) m.bond(v[i], v[j]); // skip opposite vertices
+    }
+  }
+  return m;
+}
 
 const GLYPHS = {
   stroke: strokeGlyph,
@@ -212,19 +312,34 @@ const GLYPHS = {
   neurocritical: neuroGlyph,
   prehospital: heliGlyph,
   "clinical-ai": netGlyph,
-  other: () => [...diamond(0, 0, 0.8), ...diamond(0, 0, 0.45), ...diamond(0, 0, 0.12)],
+  other: otherGlyph,
 };
 
+// Group = bonds (lines) + atoms (instanced spheres) + invisible hit sphere for picking.
 function buildGlyph(id, color) {
-  const pts = GLYPHS[id]().flatMap(([x0, y0, x1, y1]) => [x0, y0, 0, x1, y1, 0]);
-  const geo = new THREE.BufferGeometry();
-  geo.setAttribute("position", new THREE.Float32BufferAttribute(pts, 3));
+  const { atoms, bonds } = GLYPHS[id]();
+  const ink = color.clone().multiplyScalar(GLYPH_DARKEN);
+  const group = new THREE.Group();
+
+  const pts = bonds.flatMap(([a, b]) => [...atoms[a].slice(0, 3), ...atoms[b].slice(0, 3)]);
   const lines = new THREE.LineSegments(
-    geo,
-    new THREE.LineBasicMaterial({ color: color.clone().multiplyScalar(GLYPH_DARKEN), transparent: true, opacity: GLYPH_OPACITY }),
+    new THREE.BufferGeometry().setAttribute("position", new THREE.Float32BufferAttribute(pts, 3)),
+    new THREE.LineBasicMaterial({ color: ink, transparent: true, opacity: BOND_OPACITY }),
   );
-  lines.frustumCulled = false;
-  return lines;
+  group.add(lines);
+
+  const balls = new THREE.InstancedMesh(new THREE.SphereGeometry(1, ...ATOM_SEGMENTS), new THREE.MeshBasicMaterial({ color: ink }), atoms.length);
+  const mtx = new THREE.Matrix4();
+  atoms.forEach(([x, y, z, r], i) => balls.setMatrixAt(i, mtx.makeScale(r, r, r).setPosition(x, y, z)));
+  group.add(balls);
+
+  const hit = new THREE.Mesh(new THREE.SphereGeometry(GLYPH_HIT_RADIUS, 8, 6), new THREE.MeshBasicMaterial({ visible: false }));
+  hit.userData.theme = id;
+  group.add(hit);
+
+  group.userData.hit = hit;
+  group.traverse((o) => (o.frustumCulled = false));
+  return group;
 }
 
 const TERRAIN_VERT = /* glsl */ `
@@ -283,7 +398,7 @@ const TERRAIN_FRAG = /* glsl */ `
 `;
 
 function boot() {
-  const { works, themes, isVisible, select, state } = window.researchMap;
+  const { works, themes, isVisible, select, isolateTheme, state } = window.researchMap;
   const css = getComputedStyle(document.documentElement);
   const themeColor = Object.fromEntries(
     themes.map((t) => [t.id, new THREE.Color(css.getPropertyValue(`--${t.id}`).trim())]),
@@ -433,6 +548,7 @@ function boot() {
   const paperTag = addTag("", "paper-tag", [0, 0, 0], "14px,-50%");
   paperTag.el.hidden = true;
   let hovered = null;
+  let hoveredGlyph = null;
 
   // ---- terrain math ----
   let visible = [];
@@ -564,8 +680,9 @@ function boot() {
       g.x += (g.tx - g.x) * EASE;
       g.z += (g.tz - g.z) * EASE;
       g.y += (g.ty - g.y) * EASE;
-      const sc = g.obj.scale.x + (g.want * GLYPH_SIZE - g.obj.scale.x) * EASE;
-      maxDelta = Math.max(maxDelta, Math.abs(g.tx - g.x), Math.abs(g.tz - g.z), Math.abs(g.ty - g.y), Math.abs(g.want * GLYPH_SIZE - sc));
+      const wantScale = g.want * GLYPH_SIZE * (g.id === hoveredGlyph ? GLYPH_HOVER_SCALE : 1);
+      const sc = g.obj.scale.x + (wantScale - g.obj.scale.x) * EASE;
+      maxDelta = Math.max(maxDelta, Math.abs(g.tx - g.x), Math.abs(g.tz - g.z), Math.abs(g.ty - g.y), Math.abs(wantScale - sc));
       g.obj.scale.setScalar(sc);
       g.obj.visible = sc > 0.01;
       g.obj.position.set(g.x, g.y, g.z);
@@ -596,6 +713,8 @@ function boot() {
   }
 
   const pickPin = () => ray.intersectObjects(pins.filter((m) => m.visible))[0]?.object.userData.paper ?? null;
+  const pickGlyph = () =>
+    ray.intersectObjects(glyphs.filter((g) => g.obj.visible).map((g) => g.obj.userData.hit), false)[0]?.object.userData.theme ?? null;
 
   function pickAny() {
     const pin = pickPin();
@@ -618,15 +737,27 @@ function boot() {
   canvas.addEventListener("pointerup", (e) => {
     if (!downAt || Math.hypot(e.clientX - downAt[0], e.clientY - downAt[1]) > CLICK_SLOP_PX) return;
     aim(e);
+
+    // Glyph click isolates its theme, like the legend chip.
+    const theme = pickGlyph();
+    if (theme) return isolateTheme(theme);
+
     const p = pickAny();
     if (p) select(p.work);
   });
   canvas.addEventListener("pointermove", (e) => {
     aim(e);
     hovered = pickPin();
-    canvas.style.cursor = hovered ? "pointer" : "grab";
+    const glyph = hovered ? null : pickGlyph();
+    if (glyph !== hoveredGlyph) settled = false; // re-run easing for the hover scale
+    hoveredGlyph = glyph;
+    canvas.style.cursor = hovered || hoveredGlyph ? "pointer" : "grab";
   });
-  canvas.addEventListener("pointerleave", () => (hovered = null));
+  canvas.addEventListener("pointerleave", () => {
+    hovered = null;
+    hoveredGlyph = null;
+    settled = false;
+  });
 
   // ---- sizing / loop ----
   function resize() {
@@ -672,7 +803,9 @@ function boot() {
   function frame() {
     easeStep();
     controls.update();
-    for (const g of glyphs) g.obj.quaternion.copy(camera.quaternion);
+    // Slow spin, phase-shifted per lane so the models do not turn in lockstep.
+    const t = performance.now() / 1000;
+    glyphs.forEach((g, i) => (g.obj.rotation.y = t * GLYPH_SPIN + i));
     renderer.render(scene, camera);
     placeTags();
     requestAnimationFrame(frame);

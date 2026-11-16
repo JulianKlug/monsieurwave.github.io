@@ -99,8 +99,8 @@ function init(works) {
     refresh();
   }
 
-  window.researchMap = { works, themes: THEMES, state, isVisible, select };
-  buildFilters(refresh);
+  const isolateTheme = buildFilters(refresh);
+  window.researchMap = { works, themes: THEMES, state, isVisible, select, isolateTheme };
   buildYear(minYear, maxYear, refresh);
   buildList(works, select);
   refresh();
@@ -120,8 +120,18 @@ function layoutHubs() {
   });
 }
 
+// Returns isolate(id), shared by the chips and the map glyphs.
 function buildFilters(onChange) {
   const box = d3.select("#filters");
+
+  // Isolates a theme; isolating the isolated theme again restores all.
+  const isolate = (id) => {
+    const isolated = state.active.size === 1 && state.active.has(id);
+    state.active = new Set(isolated ? THEMES.map((x) => x.id) : [id]);
+    box.selectAll(".chip").attr("aria-pressed", (_, i) => state.active.has(THEMES[i].id));
+    onChange();
+  };
+
   THEMES.forEach((t) => {
     box
       .append("button")
@@ -129,14 +139,9 @@ function buildFilters(onChange) {
       .attr("aria-pressed", "true")
       .style("--c", themeColor(t.id))
       .html(`<i></i>${t.label}`)
-      .on("click", () => {
-        // Click isolates a theme; clicking the isolated theme again restores all.
-        const isolated = state.active.size === 1 && state.active.has(t.id);
-        state.active = new Set(isolated ? THEMES.map((x) => x.id) : [t.id]);
-        box.selectAll(".chip").attr("aria-pressed", (_, i) => state.active.has(THEMES[i].id));
-        onChange();
-      });
+      .on("click", () => isolate(t.id));
   });
+  return isolate;
 }
 
 function buildYear(min, max, onChange) {
