@@ -40,7 +40,7 @@ Academic Projects
   <iframe src="/academic_map/embed.html" title="Research map: publications by year and domain" loading="lazy"></iframe>
 </div>
 
-A topographic map of my publications: height marks how densely I have published a domain, the slider cuts the land by year.
+A topographic map of my publications: height shows how much I have published in each domain; the slider filters by year.
 
 <details class="map-pubs" id="publications">
   <summary>Publications</summary>
@@ -57,8 +57,10 @@ A topographic map of my publications: height marks how densely I have published 
   };
   revealPubs();
   window.addEventListener("hashchange", revealPubs);
+  /* Same-page header click: the theme's smooth-scroll handles scrolling but
+     never sets the hash, so open the list directly. */
   document.addEventListener("click", (e) => {
-    if (e.target.closest('a[href$="#publications"]')) setTimeout(revealPubs);
+    if (e.target.closest('a[href$="#publications"]')) document.getElementById("publications").open = true;
   });
 
   fetch("/academic_map/data/works.json")
