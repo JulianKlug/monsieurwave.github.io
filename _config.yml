@@ -152,6 +152,7 @@ exclude:
   - node_modules
   - package.json*
   - tmp
+  - academic_map/REFERENCES.md
   - vendor
   - path
 keep_files:
