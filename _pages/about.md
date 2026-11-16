@@ -42,12 +42,25 @@ Academic Projects
 
 A topographic map of my publications: height marks how densely I have worked a domain, the slider cuts the land by year.
 
-<details class="map-pubs">
+<details class="map-pubs" id="publications">
   <summary>Publications</summary>
   <ol id="map-pubs"></ol>
 </details>
 
 <script>
+  /* Header "Publications" links to /#publications: expand and reveal the list. */
+  const revealPubs = () => {
+    if (location.hash !== "#publications") return;
+    const pubs = document.getElementById("publications");
+    pubs.open = true;
+    pubs.scrollIntoView();
+  };
+  revealPubs();
+  window.addEventListener("hashchange", revealPubs);
+  document.addEventListener("click", (e) => {
+    if (e.target.closest('a[href$="#publications"]')) setTimeout(revealPubs);
+  });
+
   fetch("/academic_map/data/works.json")
     .then((r) => r.json())
     .then((works) => {
