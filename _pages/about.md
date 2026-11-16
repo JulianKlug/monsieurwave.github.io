@@ -103,7 +103,7 @@ A topographic map of my publications: height marks how densely I have published 
 
 Non-Academic Projects: 
 - [Kassandra](https://kassandra.julianklug.com), bringing machine learning safely to clinical practice
-- [PDF2Calendar](https://pdf2calendar.julianklug.com), converting hospital shift pdf files to modern calendars   
+- [PDF2Calendar](https://github.com/JulianKlug/PDF2Calendar), converting hospital shift pdf files to modern calendars   
 - [FentaSim](http://fentasim.julianklug.com), a tool to simulate effect site concentrations of fentanyl
 - [DD4PH](https://dd4ph.julianklug.com), a tool to help choosing the right measure of cardiac output for the diagnosis of pulmonary hypertension
 - PHI, connect patients to their hospital 
