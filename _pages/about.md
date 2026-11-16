@@ -29,8 +29,9 @@ Academic Projects
   .map-pubs > summary { cursor: pointer; font-weight: 600; }
   .map-pubs ol { margin: .75rem 0 0; padding-left: 0; list-style: none; }
   .map-pubs li { border-top: 1px solid #eee; }
-  .map-pubs .row { display: grid; grid-template-columns: 3.2rem 1fr; gap: .4rem; padding: .5rem; margin: 0 -.5rem; color: inherit; text-decoration: none; }
-  .map-pubs a.row:hover { background: #f3f2ee; }
+  .map-pubs .row { display: grid; grid-template-columns: 3.2rem 1fr; gap: .4rem; padding: .5rem; margin: 0 -.5rem; cursor: pointer; }
+  .map-pubs .row:hover { background: #f3f2ee; }
+  .map-pubs li.sel .row { background: #e8e6df; }
   .map-pubs .y { color: #999; font-variant-numeric: tabular-nums; }
   .map-pubs .j { color: #999; font-size: .9em; }
 </style>
@@ -51,12 +52,37 @@ A topographic map of my publications: height marks how densely I have worked a d
     .then((r) => r.json())
     .then((works) => {
       works.sort((a, b) => b.year - a.year || a.title.localeCompare(b.title));
+      const title = (w) => (w.doi ? `<a href="https://doi.org/${w.doi}">${w.title}</a>` : w.title);
       const row = (w) =>
-        `<span class="y">${w.year}</span><span>${w.title}${w.journal ? `<div class="j">${w.journal}</div>` : ""}</span>`;
-      document.getElementById("map-pubs").innerHTML = works
-        .map((w) => `<li>${w.doi ? `<a class="row" href="https://doi.org/${w.doi}">${row(w)}</a>` : `<div class="row">${row(w)}</div>`}</li>`)
-        .join("");
+        `<span class="y">${w.year}</span><span>${title(w)}${w.journal ? `<div class="j">${w.journal}</div>` : ""}</span>`;
+      const list = document.getElementById("map-pubs");
+      list.innerHTML = works.map((w, i) => `<li data-i="${i}"><div class="row">${row(w)}</div></li>`).join("");
       document.querySelector(".map-pubs > summary").textContent = `Publications (${works.length})`;
+
+      /* Row click (outside the DOI link) selects the paper on the map.
+         The iframe is same-origin, so its map API is reachable directly;
+         papers are matched by title since each page parses its own JSON. */
+      const frame = document.querySelector(".map-embed iframe");
+      const map = () => frame.contentWindow.researchMap;
+      const findWork = (w) => map()?.works.find((m) => m.title === w.title);
+
+      list.addEventListener("click", (e) => {
+        if (e.target.closest("a")) return;
+        const li = e.target.closest("li");
+        const work = li && findWork(works[li.dataset.i]);
+        if (!work) return;
+        map().select(work);
+        frame.scrollIntoView({ behavior: "smooth", block: "center" });
+      });
+
+      /* Mirror the map selection (from row or pin clicks) onto the list. */
+      const syncSelection = () => {
+        const sel = map()?.state.selected;
+        list.querySelectorAll("li").forEach((li) => li.classList.toggle("sel", sel?.title === works[li.dataset.i].title));
+      };
+      const listen = () => frame.contentDocument.addEventListener("map:refresh", syncSelection);
+      const loaded = frame.contentWindow.location.href !== "about:blank" && frame.contentDocument.readyState === "complete";
+      loaded ? listen() : frame.addEventListener("load", listen);
     });
 </script>
 
