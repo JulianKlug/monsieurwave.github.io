@@ -1,0 +1,289 @@
+[
+  {
+    "id": 220014766,
+    "title": "Accidents vasculaires cérébraux : évolution et enjeux épidémiologiques",
+    "journal": "Revue Médicale Suisse",
+    "year": 2026,
+    "doi": "10.53738/revmed.2026.22.959.48586",
+    "themes": [
+      "stroke"
+    ]
+  },
+  {
+    "id": 225105092,
+    "title": "Diagnostic accuracy, characteristics and survival of children with trauma in HEMS: a retrospective multi-centre observational study",
+    "journal": "Scandinavian Journal of Trauma, Resuscitation and Emergency Medicine",
+    "year": 2026,
+    "doi": "10.1186/s13049-026-01685-3",
+    "themes": [
+      "prehospital"
+    ]
+  },
+  {
+    "id": 220877543,
+    "title": "Early non-intravenous analgesia in prehospital trauma care: time to act",
+    "journal": "Scandinavian Journal of Trauma, Resuscitation and Emergency Medicine",
+    "year": 2026,
+    "doi": "10.1186/s13049-026-01663-9",
+    "themes": [
+      "prehospital"
+    ]
+  },
+  {
+    "id": 224412941,
+    "title": "Expert Evaluation of Clinical Large Language Models in Intensive Care Medicine: A Multi-rater Assessment Study (Preprint)",
+    "journal": "",
+    "year": 2026,
+    "doi": "10.2196/preprints.109644",
+    "themes": [
+      "clinical-ai"
+    ]
+  },
+  {
+    "id": 220015309,
+    "title": "Glasgow coma scale score before prehospital tracheal intubation in trauma vs. nontrauma patients",
+    "journal": "European Journal of Anaesthesiology",
+    "year": 2026,
+    "doi": "10.1097/eja.0000000000002263",
+    "themes": [
+      "prehospital"
+    ]
+  },
+  {
+    "id": 220014685,
+    "title": "Intelligence artificielle dans la prise en charge de l’accident vasculaire cérébral",
+    "journal": "Revue Médicale Suisse",
+    "year": 2026,
+    "doi": "10.53738/revmed.2026.22.959.48567",
+    "themes": [
+      "stroke",
+      "clinical-ai"
+    ]
+  },
+  {
+    "id": 228437164,
+    "title": "Physician-staffed HEMS: triage accuracy beyond diagnostic agreement in paediatric trauma",
+    "journal": "Scandinavian Journal of Trauma, Resuscitation and Emergency Medicine",
+    "year": 2026,
+    "doi": "10.1186/s13049-026-01706-1",
+    "themes": [
+      "prehospital"
+    ]
+  },
+  {
+    "id": 220242173,
+    "title": "Prehospital Pain Management in Trauma Treated by Helicopter Emergency Medical Services: Association of Patient and Physician Sex",
+    "journal": "Anesthesia & Analgesia",
+    "year": 2026,
+    "doi": "10.1213/ane.0000000000008164",
+    "themes": [
+      "prehospital"
+    ]
+  },
+  {
+    "id": 230254257,
+    "title": "Subversion of clinical judgment by conversational artificial intelligence",
+    "journal": "",
+    "year": 2026,
+    "doi": "10.64898/2026.10.05.26364541",
+    "themes": [
+      "clinical-ai"
+    ]
+  },
+  {
+    "id": 220014814,
+    "title": "CSF diversion after aneurysmal sub-arachnoid hemorrhage: towards personalized treatment strategies",
+    "journal": "Critical Care",
+    "year": 2025,
+    "doi": "10.1186/s13054-025-05788-8",
+    "themes": [
+      "neurocritical"
+    ]
+  },
+  {
+    "id": 185421050,
+    "title": "Determinants of brain network resilience after stroke",
+    "journal": "Brain Communications",
+    "year": 2025,
+    "doi": "10.1093/braincomms/fcaf218",
+    "themes": [
+      "stroke",
+      "networks"
+    ]
+  },
+  {
+    "id": 183955825,
+    "title": "Effect of extended intravenous diclofenac infusions on brain tissue oxygenation in patients with acute brain injury",
+    "journal": "Intensive Care Medicine Experimental",
+    "year": 2025,
+    "doi": "10.1186/s40635-025-00759-3",
+    "themes": [
+      "neurocritical"
+    ]
+  },
+  {
+    "id": 178777158,
+    "title": "Stroke Incidence, Case Fatality, and Mortality Using the WHO International Classification of Diseases 11: The Geneva Stroke Study.",
+    "journal": "Neurology",
+    "year": 2025,
+    "doi": "10.1212/wnl.0000000000213353",
+    "themes": [
+      "stroke"
+    ]
+  },
+  {
+    "id": 186286805,
+    "title": "The Impact of Cardiac Output Methods on the Classification of Pulmonary Hypertension",
+    "journal": "Pulmonary Circulation",
+    "year": 2025,
+    "doi": "10.1002/pul2.70112",
+    "themes": [
+      "other"
+    ]
+  },
+  {
+    "id": 178777160,
+    "title": "Can artificial intelligence help for scientific illustration? Details matter.",
+    "journal": "Critical care (London, England)",
+    "year": 2024,
+    "doi": "10.1186/s13054-024-04970-8",
+    "themes": [
+      "clinical-ai"
+    ]
+  },
+  {
+    "id": 164665943,
+    "title": "Dynamically Normalized Pupillometry for Detecting Delayed Cerebral Ischemia After Aneurysmal Subarachnoid Hemorrhage",
+    "journal": "Critical Care Explorations",
+    "year": 2024,
+    "doi": "10.1097/CCE.0000000000001135",
+    "themes": [
+      "neurocritical"
+    ]
+  },
+  {
+    "id": 171688850,
+    "title": "Machine learning for early dynamic prediction of functional outcome after stroke",
+    "journal": "Communications Medicine",
+    "year": 2024,
+    "doi": "10.1038/s43856-024-00666-w",
+    "themes": [
+      "stroke",
+      "clinical-ai"
+    ]
+  },
+  {
+    "id": 107900201,
+    "title": "Intravenous r-tPA Before Thrombectomy Versus Thrombectomy Alone in Strokes With Unknown Time of Onset",
+    "journal": "Stroke",
+    "year": 2022,
+    "doi": "10.1161/STROKEAHA.121.037741",
+    "themes": [
+      "stroke"
+    ]
+  },
+  {
+    "id": 112750445,
+    "title": "Preparing for a Second Attack: A Lesion Simulation Study on Network Resilience After Stroke",
+    "journal": "Stroke",
+    "year": 2022,
+    "doi": "10.1161/STROKEAHA.121.037372",
+    "themes": [
+      "stroke",
+      "networks"
+    ]
+  },
+  {
+    "id": 96957480,
+    "title": "Abstract P345: Perfusion-Guided Bridging Therapy in Strokes With Unknown Time of Onset and Large Vessel Occlusion",
+    "journal": "Stroke",
+    "year": 2021,
+    "doi": "10.1161/str.52.suppl_1.p345",
+    "themes": [
+      "stroke"
+    ]
+  },
+  {
+    "id": 96957317,
+    "title": "Abstract P357: Deep Learning Building on Prior Ischemic Core Segmentation Improves Prediction of Infarction After Stroke",
+    "journal": "Stroke",
+    "year": 2021,
+    "doi": "10.1161/str.52.suppl_1.p357",
+    "themes": [
+      "stroke",
+      "clinical-ai"
+    ]
+  },
+  {
+    "id": 91264279,
+    "title": "Bayesian Skip Net: Building on Prior Information for the Prediction and Segmentation of Stroke Lesions",
+    "journal": "",
+    "year": 2021,
+    "doi": "10.1007/978-3-030-72084-1_16",
+    "themes": [
+      "stroke",
+      "clinical-ai"
+    ]
+  },
+  {
+    "id": 75179900,
+    "title": "Integrating regional perfusion CT information to improve prediction of infarction after stroke",
+    "journal": "Journal of Cerebral Blood Flow & Metabolism",
+    "year": 2021,
+    "doi": "10.1177/0271678X20924549",
+    "themes": [
+      "stroke",
+      "clinical-ai"
+    ]
+  },
+  {
+    "id": 96957011,
+    "title": "Non-occlusive mesenteric ischemia: Diagnostic challenges and perspectives in the era of artificial intelligence",
+    "journal": "World Journal of Gastroenterology",
+    "year": 2021,
+    "doi": "10.3748/wjg.v27.i26.4088",
+    "themes": [
+      "clinical-ai"
+    ]
+  },
+  {
+    "id": 220015361,
+    "title": "The neural correlates of intermanual transfer",
+    "journal": "NeuroImage",
+    "year": 2021,
+    "doi": "10.1016/j.neuroimage.2021.118657",
+    "themes": [
+      "networks"
+    ]
+  },
+  {
+    "id": 101475015,
+    "title": "[COVID-19: Do not put the cart before the horse].",
+    "journal": "Revue medicale suisse",
+    "year": 2021,
+    "doi": "",
+    "themes": [
+      "other"
+    ]
+  },
+  {
+    "id": 96957092,
+    "title": "Three-Dimensional Surface Reconstruction of the Human Cochlear Nucleus: Implications for Auditory Brain Stem Implant Design",
+    "journal": "Journal of Neurological Surgery Part B: Skull Base",
+    "year": 2020,
+    "doi": "10.1055/s-0039-1677863",
+    "themes": [
+      "other"
+    ]
+  },
+  {
+    "id": 96957037,
+    "title": "Metacognition of visuomotor decisions in conversion disorder",
+    "journal": "Neuropsychologia",
+    "year": 2018,
+    "doi": "10.1016/j.neuropsychologia.2018.04.018",
+    "themes": [
+      "networks"
+    ]
+  }
+]

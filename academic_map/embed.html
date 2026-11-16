@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Julian Klug — Research map</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Embedded on the About page: the stage fills the iframe, no page chrome. */
+    #stage { height: 100vh; }
+  </style>
+</head>
+<body>
+  <main>
+    <section id="stage">
+      <div id="terrain" role="img" aria-label="3D terrain of publications by year and research domain; peaks mark many papers"></div>
+      <svg id="graph" role="img" aria-label="Network of publications by theme" style="display:none"></svg>
+
+      <div class="title">
+        <p class="meta">Click to sample</p>
+        <p class="meta">Drag to orbit · scroll to zoom</p>
+      </div>
+
+      <div class="views" role="group" aria-label="View">
+        <button data-view="terrain" aria-pressed="true">Terrain</button>
+        <button data-view="network" aria-pressed="false">Network</button>
+      </div>
+
+      <aside id="panel" hidden></aside>
+
+      <div class="controls">
+        <div id="filters" class="legend"></div>
+        <label class="year">Up to <output id="year-out"></output>
+          <input id="year" type="range">
+        </label>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script type="importmap">
+    { "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    } }
+  </script>
+  <script src="app.js"></script>
+  <script type="module" src="map3d.js"></script>
+</body>
+</html>
