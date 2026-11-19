@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "About me."
+title: ""
 excerpt: "About me"
 author_profile: true
 redirect_from: 
@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I am a critical care physician currently working in the ICU of Lausanne University Hospital and working in the [Geneva Stroke Lab](https://www.carreralab.com/) led by Prof. Emmanuel Carrera (Hôpitaux Universitaires de Genève). I further collaborate with Prof. Urs Pietsch on improving neurocritical and prehospital care. Previously, I had the opportunity to learn and work at the [MIP-lab](https://miplab.epfl.ch/) headed by Prof. Dimitri Van De Ville (EPFL) and the [Lee Lab](https://oto.hms.harvard.edu/people/daniel-lee) directed by Dr. Daniel Lee (Harvard, MEEI). My research centers on biomedical applications of artificial intelligence & machine learning, with a special focus on neurocritical care.
+I am a critical care physician currently working in the ICU of the Lausanne University Hospital and working in the [Geneva Stroke Lab](https://www.carreralab.com/) led by Prof. Emmanuel Carrera (Hôpitaux Universitaires de Genève). I further collaborate with Prof. Urs Pietsch on improving neurocritical and prehospital care. Previously, I had the opportunity to learn and work at the [MIP-lab](https://miplab.epfl.ch/) headed by Prof. Dimitri Van De Ville (EPFL) and the [Lee Lab](https://oto.hms.harvard.edu/people/daniel-lee) directed by Dr. Daniel Lee (Harvard, MEEI). My research centers on biomedical applications of artificial intelligence & machine learning, with a special focus on neurocritical care.
 
 In addition to my clinical work and research, I love designing practical tools to enhance the care for patients and enjoy contributing to open-source projects. See [Kassandra](https://kassandra.julianklug.com), a tool to bring machine learning into my clinical practice. I have worked on PHI, a tool aiming to connect patients to their hospital caregivers before and after their stay and had a hand in peer-to-peer communication networks whilst running Vlynt.  
 
