@@ -68,7 +68,7 @@ a { color: inherit; }
 .tag { position: absolute; top: 0; left: 0; pointer-events: none; white-space: nowrap; font: .66rem/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; will-change: transform; }
 .tag.axis { color: var(--muted); }
 .tag.axis-title { color: var(--muted); font-size: .72rem; letter-spacing: .24em; }
-.tag.lane { font-weight: 600; }
+.tag.lane { font-weight: 600; pointer-events: auto; cursor: pointer; }
 .tag.paper-tag { padding: .35rem .5rem; background: var(--bg); border: 1px solid var(--line); color: var(--fg); letter-spacing: .06em; text-transform: none; font-size: .72rem; }
 .tag[hidden] { display: none; }
 

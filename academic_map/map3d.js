@@ -546,7 +546,10 @@ function boot() {
   addTag("YEAR →", "axis-title", [0, 0, SIZE_Z / 2 + 1.0], "-50%,0");
   for (const id of LANES) {
     const label = themes.find((t) => t.id === id).label;
-    addTag(label, "lane", [-SIZE_X / 2 - 0.2, 0, zOfLane(id)], "-100%,-50%", `var(--${id})`);
+    const lane = addTag(label, "lane", [-SIZE_X / 2 - 0.2, 0, zOfLane(id)], "-100%,-50%", `var(--${id})`);
+
+    // Lane label click isolates its theme, like the legend chip.
+    lane.el.addEventListener("click", () => isolateTheme(id));
   }
 
   const paperTag = addTag("", "paper-tag", [0, 0, 0], TAG_RIGHT);
