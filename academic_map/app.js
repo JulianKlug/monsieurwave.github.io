@@ -164,7 +164,7 @@ function buildList(works, onSelect) {
     .on("click", (_, d) => onSelect(d))
     .html(
       (d) => `<span class="y">${d.year}</span>
-        <span><a ${d.doi ? `href="${DOI_BASE}${d.doi}"` : ""}>${d.title}</a>
+        <span><a ${d.doi ? `href="${DOI_BASE}${d.doi}" target="_blank" rel="noopener"` : ""}>${d.title}</a>
         <div class="meta">${d.journal}</div></span>`,
     );
 }
@@ -178,7 +178,7 @@ function renderPanel(d) {
     <h3>${d.title}</h3>
     <p>${d.journal ? d.journal + " · " : ""}${d.year}</p>
     <p>${d.themes.map(themeLabel).join(" · ")}</p>
-    ${d.doi ? `<p><a href="${DOI_BASE}${d.doi}">${d.doi}</a></p>` : ""}`;
+    ${d.doi ? `<p><a href="${DOI_BASE}${d.doi}" target="_blank" rel="noopener">${d.doi}</a></p>` : ""}`;
   panel.querySelector("button").onclick = () => {
     state.selected = null;
     panel.hidden = true;
